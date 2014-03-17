@@ -1,0 +1,13 @@
+XTerm*font: -*-lucidatypewriter-medium-*-*-*-12-*-*-*-*-*-*-*
+XTerm*background: black
+XTerm*foreground: white
+XTerm*pointerColor: white
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: green
+XTerm*internalBorder: 2
+XTerm*ScrollKey: true
+XTerm*SaveLines: 10000
+XTerm*multiClickTime: 250
+XTerm*VT100.geometry: 80x24
+XTerm*title: XTerm
+XTerm*ScrollBar: false
