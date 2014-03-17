@@ -1,6 +1,25 @@
 #!/bin/bash
 
-# Install some sensible programs, set some defaults
+# Environment detechion
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  OS=osx
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  OS=freebsd
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+  OS=linux
+  if [[ -f /etc/redhat-release ]]; then
+    DISTRO=redhat
+  elif [[ -f /etc/debian_version ]]; then
+    DISTRO=debian
+  else
+    echo "Not supported!"
+    exit
+  fi
+else
+  echo "$OSTYPE Not supported!"
+  exit
+fi
 
 # ask some stuff
 read -p "Name (format: Firstname Lastname): " -r
@@ -24,7 +43,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # install homebrew http://brew.sh/
   if ! hash brew 2>/dev/null; then
     echo "Starting homebrew installation..."
-    #ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
 
   echo "Updating brew formulas..."
