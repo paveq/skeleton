@@ -1,0 +1,9 @@
+[extensions]
+color =
+hgext.extdiff =
+
+[extdiff]
+cmd.opendiff = fmdiff
+
+[ui]
+username=Paavo Pokkinen <paavo.pokkinen@vaimo.com>

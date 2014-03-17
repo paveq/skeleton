@@ -1,3 +1,5 @@
 [user]
 	name = Paavo Pokkinen
-	email = paveq2@gmail.com
+	email = paveq@sendanor.com
+[push]
+	default = simple
