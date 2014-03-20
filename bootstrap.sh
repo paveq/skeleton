@@ -52,6 +52,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Set fast keyboard repeat rate
   defaults write NSGlobalDomain KeyRepeat -int 2
   defaults write NSGlobalDomain InitialKeyRepeat -int 25
+  
+  # Disable automatic emoji substitution (i.e. use plain text smileys)
+  defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+
+  # Disable smart quotes as it’s annoying for messages that contain code
+  defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+
+  # Disable continuous spell checking
+  defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
   # install homebrew http://brew.sh/
   if ! hash brew 2>/dev/null; then
