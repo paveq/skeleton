@@ -37,8 +37,17 @@ fi
 ###############################################################################
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  # ask for admin password upfront
+  sudo -v
+    
+  # Disable the sound effects on boot
+  sudo nvram SystemAudioVolume=" "
+  
   # show hidden files by default
   defaults write com.apple.Finder AppleShowAllFiles YES
+  
+  # Menu bar: disable transparency
+  defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
   # install homebrew http://brew.sh/
   if ! hash brew 2>/dev/null; then
