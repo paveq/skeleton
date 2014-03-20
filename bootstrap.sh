@@ -43,8 +43,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Disable the sound effects on boot
   sudo nvram SystemAudioVolume=" "
   
-  # show hidden files by default
+  # Finder: show hidden files by default
   defaults write com.apple.Finder AppleShowAllFiles YES
+  
+  # Finder: show all filename extensions
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
   
   # Menu bar: disable transparency
   defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
