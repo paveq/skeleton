@@ -48,6 +48,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   
   # Menu bar: disable transparency
   defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+  
+  # Set fast keyboard repeat rate
+  defaults write NSGlobalDomain KeyRepeat -int 2
+  defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
   # install homebrew http://brew.sh/
   if ! hash brew 2>/dev/null; then
