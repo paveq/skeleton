@@ -45,6 +45,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   
   # Finder: show hidden files by default
   defaults write com.apple.Finder AppleShowAllFiles YES
+  #show hidden files in open/save dialog
+  defaults write -g AppleShowAllFiles -bool true
   
   # Finder: show all filename extensions
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
